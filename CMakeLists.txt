@@ -1,15 +1,17 @@
-cmake_minimum_required(VERSION 3.16)
+cmake_minimum_required(VERSION 2.18)
 project(gradcpp)
 
 set(CMAKE_CXX_STANDARD 14)
 
 include_directories(include)
-add_executable(gradcpp main.cpp softposit)
-target_sources(gradcpp PUBLIC
+add_executable(gradcpp main.cpp
         include/platform.h
         include/internals.h
-        include/primitives.h            include/softposit.h             include/softposit_cpp.h         include/softposit_types.h)
-target_sources(gradcpp PRIVATE
+        include/primitives.h
+        include/softposit.h
+        include/softposit_cpp.h
+        include/softposit_types.h
+
         softpositsrc/c_convertDecToPosit16.c
         softpositsrc/c_convertDecToPosit32.c
         softpositsrc/c_convertDecToPosit8.c
@@ -145,6 +147,6 @@ target_sources(gradcpp PRIVATE
         softpositsrc/ui64_to_pX1.c
         softpositsrc/ui64_to_pX2.c
         )
-target_link_libraries(gradcpp ${SOFTPOSIT})
+#target_link_libraries(gradcpp ${SOFTPOSIT})
 
 #target_link_libraries(gradcpp ~/school/verif/gradcpp/SoftPosit/build/Linux-x86_64-GCC/softposit.so)
