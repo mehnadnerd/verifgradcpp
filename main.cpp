@@ -4,6 +4,7 @@
 #include "include/softposit.h"
 #include <cstdlib>
 #include <cstdio>
+#include <cstring>
 
 uint32_t format_posit(posit_2_t p, int bits) {
     uint32_t raw = p.v;
