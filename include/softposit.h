@@ -615,7 +615,7 @@ static inline quire_1_t qX1Clr(){
 		uA.p; \
 })
 
-#define absPX2(a)({\
+#define absPX1(a)({\
 		union ui32_pX1 uA;\
 		uA.p = (a);\
 		int const mask = uA.ui >> 31;\
