@@ -2,6 +2,8 @@
 #include <vector>
 #include <random>
 #include "include/softposit.h"
+#include <cstdlib>
+#include <cstdio>
 
 uint32_t format_posit(posit_2_t p, int bits) {
     uint32_t raw = p.v;
@@ -10,7 +12,7 @@ uint32_t format_posit(posit_2_t p, int bits) {
     return shifted;
 }
 
-std::pair<std::vector<double>, std::vector<double>> generate_doubles(char** args) {
+std::pair<std::vector<double>, std::vector<double> > generate_doubles(char** args) {
     std::vector<double> av;
     std::vector<double> bv;
     // 0 is number, 1 is algorithm
@@ -35,7 +37,7 @@ std::pair<std::vector<double>, std::vector<double>> generate_doubles(char** args
     return std::make_pair(av, bv);
 }
 
-void es2_main(FILE* f, int bits, std::pair<std::vector<double>, std::vector<double>> const &list) {
+void es2_main(FILE* f, int bits, std::pair<std::vector<double>, std::vector<double> > const &list) {
     posit_2_t a;
     posit_2_t b;
     quire_2_t q;
