@@ -27,6 +27,9 @@ std::pair<std::vector<double>, std::vector<double> > generate_doubles(char** arg
     } else if (strcmp(args[1], "test2") == 0) {
         av = {0.0, 1.0, 2.0, 3.0, 1.5, 4.0};
         bv = {0.0, 1.0, 2.0, 3.0, 1.5, 4.0};
+    } else if (strcmp(args[1], "test3") == 0) {
+        av = {0.25};
+        bv = {1.0};
     } else {
         // random
         std::random_device rd;
