@@ -24,6 +24,9 @@ std::pair<std::vector<double>, std::vector<double> > generate_doubles(char** arg
     } else if (strcmp(args[1], "test") == 0) {
         av = {0.0, 1.0, 2.0, 3.0, 1.5, -4.0};
         bv = {0.0, -1.0, -2.0, -3.0, -1.5, -4.0};
+    } else if (strcmp(args[1], "test2") == 0) {
+        av = {0.0, 1.0, 2.0, 3.0, 1.5, 4.0};
+        bv = {0.0, 1.0, 2.0, 3.0, 1.5, 4.0};
     } else {
         // random
         std::random_device rd;
@@ -62,7 +65,7 @@ void es2_main(FILE* f, int bits, std::pair<std::vector<double>, std::vector<doub
         b = convertDoubleToPX2(bv[i], bits);
         fprintf(f, "\n%x %x", format_posit(a, bits), format_posit(b, bits));
     }
-    printf("%f", convertPX2ToDouble(result));
+    printf("%f\n", convertPX2ToDouble(result));
 }
 
 // arguments: bits es number algo
