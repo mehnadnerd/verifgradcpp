@@ -40,7 +40,7 @@ std::pair<std::vector<double>, std::vector<double> > generate_doubles(char** arg
         // random
         std::random_device rd;
         std::mt19937 gen(rd());
-        auto dist = std::uniform_real_distribution<double>(0, INFINITY);
+        auto dist = std::uniform_real_distribution<double>(-100, 100);
         for (int i = 0; i < total; ++i) {
             av.push_back(dist(gen));
             bv.push_back(dist(gen));
