@@ -33,7 +33,10 @@ std::pair<std::vector<double>, std::vector<double> > generate_doubles(char** arg
     } else if (strcmp(args[1], "test4") == 0) {
         av = {4.0};
         bv = {1.0};
-    }else {
+    } else if (strcmp(args[1], "test5") == 0) {
+        av = {64.0};
+        bv = {1.0};
+    } else {
         // random
         std::random_device rd;
         std::mt19937 gen(rd());
